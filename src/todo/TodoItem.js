@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Button, Text} from 'native-base';
 
 export const TodoItem = ({ todo, onRemove }) => {
   const pressHandler = () => {
@@ -15,10 +16,13 @@ export const TodoItem = ({ todo, onRemove }) => {
         <Text style={styles.text}>{todo.title}</Text>
 
         <Button
-          title="x"
-          color={'red'}
+          small
+          danger
+          style={styles.btn}
           onPress={onRemove.bind(null, todo.id)}
-        />
+        >
+          <Text>x</Text>
+        </Button>
       </View>
     </TouchableOpacity>
 
@@ -29,7 +33,7 @@ const styles = StyleSheet.create({
   todo: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 15,
+    padding: 5,
     borderWidth: 1,
     borderColor: '#eee',
     borderRadius: 5,
@@ -40,4 +44,8 @@ const styles = StyleSheet.create({
     paddingRight: 30,
     width: '90%',
   },
+  btn: {
+    position: 'relative',
+    right: 5
+  }
 });

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
+
 import { AddTodo } from './AddTodo';
 import { Navbar } from '../components/Navbar';
 import { TodoItem } from './TodoItem';
@@ -40,9 +41,9 @@ export default function Todo() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 30,
-    paddingVertical: 20,
-    overflow: 'scroll',
-    marginTop: 10
+    paddingHorizontal: 5,
+    paddingTop: 10,
+    backgroundColor: '#fff',
+    height: '100%'
   },
 });

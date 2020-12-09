@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import {
-  View,
   StyleSheet,
-  TextInput,
-  Button,
   Alert,
 } from 'react-native';
+import { Form, Item, Input, Label, Button, Text} from 'native-base';
 
 export const AddTodo = ({ onSubmit }) => {
   const [value, setValue] = useState('');
@@ -20,16 +18,16 @@ export const AddTodo = ({ onSubmit }) => {
   }
 
   return (
-    <View style={ styles.block }>
-      <TextInput
-        style={ styles.input }
-        // onChangeText={ text => setValue(text) }
-        onChangeText={ setValue }
-        value={ value }
-        placeholder='Введите название дела'
-      />
-      <Button title="Добавить" onPress={ pressHandler }/>
-    </View>
+    <Form style={ styles.block }>
+        <Input
+          style={ styles.input }
+          // onChangeText={ text => setValue(text) }
+          onChangeText={ setValue }
+          value={ value }
+          placeholder='Введите название дела'
+        />
+        <Button onPress={ pressHandler } success><Text>Добавить</Text></Button>
+    </Form>
   )
 };
 
@@ -41,10 +39,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   input: {
-    width: '70%',
-    borderStyle: 'solid',
+    borderBottomColor: '#999',
     borderBottomWidth: 1,
-    borderBottomColor: "#3949ab",
-    padding: 10,
+    borderStyle: 'solid',
+    height: 45,
   }
 });
