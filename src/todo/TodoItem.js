@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Button } from 'react-native';
 
-export const Todo = ({ todo, onRemove }) => {
+export const TodoItem = ({ todo, onRemove }) => {
   const pressHandler = () => {
     onRemove(todo.id)
   }
